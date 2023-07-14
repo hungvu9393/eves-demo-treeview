@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        .tree {
+            --spacing: 1.5rem;
+            --radius: 10px;
+        }
+
+        .tree li {
+            display: block;
+            position: relative;
+            padding-left: calc(2 * var(--spacing) - var(--radius) - 2px);
+        }
+
+        .tree ul {
+            margin-left: calc(var(--radius) - var(--spacing));
+            padding-left: 0;
+        }
+
+        .tree ul li {
+            border-left: 2px solid #ddd;
+        }
+
+        .tree ul li:last-child {
+            border-color: transparent;
+        }
+
+        .tree ul li::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: calc(var(--spacing) / -2);
+            left: -2px;
+            width: calc(var(--spacing) + 2px);
+            height: calc(var(--spacing) + 1px);
+            border: solid #ddd;
+            border-width: 0 0 2px 2px;
+        }
+
+        .tree summary {
+            display: block;
+            cursor: pointer;
+        }
+
+        .tree summary::marker,
+        .tree summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .tree summary:focus {
+            outline: none;
+        }
+
+        .tree summary:focus-visible {
+            outline: 1px dotted #000;
+        }
+
+        .tree li::after,
+        .tree summary::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: calc(var(--spacing) / 2 - var(--radius));
+            left: calc(var(--spacing) - var(--radius) - 1px);
+            width: calc(2 * var(--radius));
+            height: calc(2 * var(--radius));
+            border-radius: 50%;
+            background: #ddd;
+        }
+
+        .tree summary::before {
+            z-index: 1;
+            background: #462780 url('https://iamkate.com/code/tree-views/expand-collapse.svg') 0 0;
+        }
+
+        .tree details[open]>summary::before {
+            background-position: calc(-2 * var(--radius)) 0;
+        }
+
+        .tree summary {
+            font-size: 20px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul class="tree">
+        <li>
+            <details open>
+                <summary>Đại hội đồng cổ đông</summary>
+                <ul>
+                    <li>
+                        <details open>
+                            <summary>Hội đồng quản trị</summary>
+                            <ul>
+                                <li>
+                                    <details>
+                                        <summary>Văn phòng HĐQT</summary>
+                                    </details>
+                                </li>
+                                <li>
+                                    <details>
+                                        <summary>Ủy ban kiểm toán</summary>
+                                    </details>
+                                </li>
+                                <li>
+                                    <details>
+                                        <summary>Hội đồng đầu tư</summary>
+                                    </details>
+                                </li>
+                                <li>
+                                    <details open>
+                                        <summary>Ban tổng giám đốc</summary>
+                                        <ul>
+                                            <li>
+                                                <details open>
+                                                    <summary>Khối môi giới</summary>
+                                                    <ul>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Chăm sóc KH chung</summary>
+                                                            </details>
+                                                        </li>
+                                                        <li>
+                                                            <details>
+                                                                <summary>Vùng kinh doanh</summary>
+                                                                <ul>
+                                                                    <li>
+                                                                        <details>
+                                                                            <summary>P. Môi giới KH tổ chức</summary>
+                                                                        </details>
+                                                                    </li>
+                                                                    <li>
+                                                                        <details>
+                                                                            <summary>Khu vực kinh doanh</summary>
+                                                                            <ul>
+                                                                                <li>
+                                                                                    <details>
+                                                                                        <summary>Các phòng môi giới
+                                                                                        </summary>
+                                                                                    </details>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </details>
+                                                                    </li>
+                                                                </ul>
+                                                            </details>
+                                                        </li>
+                                                    </ul>
+                                                </details>
+                                            </li>
+                                            <li>
+                                                <details>
+                                                    <summary>Khối bán lẻ</summary>
+                                                </details>
+                                            </li>
+                                            <li>
+                                                <details>
+                                                    <summary>Khối dịch vụ ngân hàng đầu tư</summary>
+                                                </details>
+                                            </li>
+                                            <li>
+                                                <details>
+                                                    <summary>Khối tài chính</summary>
+                                                </details>
+                                            </li>
+                                            <li>
+                                                <details>
+                                                    <summary>Khối nghiên cứu & đầu tư</summary>
+                                                </details>
+                                            </li>
+                                            <li>
+                                                <details>
+                                                    <summary>Khối vận hành</summary>
+                                                </details>
+                                            </li>
+                                            <li>
+                                                <details>
+                                                    <summary>Khối công nghệ thông tin</summary>
+                                                </details>
+                                            </li>
+                                            <li>
+                                                <details>
+                                                    <summary>Khối văn phòng</summary>
+                                                </details>
+                                            </li>
+                                            <li>
+                                                <details>
+                                                    <summary>Khối hỗ trợ</summary>
+                                                </details>
+                                            </li>
+                                            <li>
+                                                <details>
+                                                    <summary>Trung tâm phát triển DVCK</summary>
+                                                </details>
+                                            </li>
+                                            <li>
+                                                <details>
+                                                    <summary>
+                                                        CN Bà Triệu
+                                                        CN Nguyễn Trãi
+                                                        CN Sài Gòn</summary>
+                                                </details>
+                                            </li>
+                                        </ul>
+                                    </details>
+                                </li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </details>
+        </li>
+    </ul>
+
+</body>
+
+</html>
