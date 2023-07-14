@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        .tree {
+            --spacing: 1.5rem;
+            --radius: 10px;
+        }
+
+        .tree li {
+            display: block;
+            position: relative;
+            padding-left: calc(2 * var(--spacing) - var(--radius) - 2px);
+        }
+
+        .tree ul {
+            margin-left: calc(var(--radius) - var(--spacing));
+            padding-left: 0;
+        }
+
+        .tree ul li {
+            border-left: 2px solid #ddd;
+        }
+
+        .tree ul li:last-child {
+            border-color: transparent;
+        }
+
+        .tree ul li::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: calc(var(--spacing) / -2);
+            left: -2px;
+            width: calc(var(--spacing) + 2px);
+            height: calc(var(--spacing) + 1px);
+            border: solid #ddd;
+            border-width: 0 0 2px 2px;
+        }
+
+        .tree summary {
+            display: block;
+            cursor: pointer;
+        }
+
+        .tree summary::marker,
+        .tree summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .tree summary:focus {
+            outline: none;
+        }
+
+        .tree summary:focus-visible {
+            outline: 1px dotted #000;
+        }
+
+        .tree li::after,
+        .tree summary::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: calc(var(--spacing) / 2 - var(--radius));
+            left: calc(var(--spacing) - var(--radius) - 1px);
+            width: calc(2 * var(--radius));
+            height: calc(2 * var(--radius));
+            border-radius: 50%;
+            background: #ddd;
+        }
+
+        .tree summary::before {
+            z-index: 1;
+            background: #462780 url('https://iamkate.com/code/tree-views/expand-collapse.svg') 0 0;
+        }
+
+        .tree details[open]>summary::before {
+            background-position: calc(-2 * var(--radius)) 0;
+        }
+
+        .tree summary {
+            font-size: 20px;
+            line-height: 30px;
+        }
+    </style>
+    <style>
+        summary {
+            background-color: #462780;
+            width: fit-content;
+            color: #fff;
+            padding: 0 0.7rem;
+            border-radius: 15px;
+            margin-top: 0.5rem;
+            font-size: 12px !important;
+            font-weight: 300 !important;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .tree li::after,
+        .tree summary::before {
+            width: calc(2 * var(--radius));
+            height: calc(2 * var(--radius));
+        }
+
+        summary:hover>summary {
+            background-color: #D03C91;
+        }
+
+        summary::before,
+        li::after {
+            /* content: unset !important; */
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul class="tree">
+        <li>
+            <details open>
+                <summary>Đại hội đồng cổ đông</summary>
+                <ul>
+                    <li>
+                        <details open>
+                            <summary>Hội đồng quản trị</summary>
+                            <ul>
+                                <li>
+                                    <details open>
+                                        <summary>Văn phòng HĐQT</summary>
+                                    </details>
+                                </li>
+                                <li>
+                                    <details open>
+                                        <summary>Ủy ban kiểm toán</summary>
+                                    </details>
+                                </li>
+                                <li>
+                                    <details open>
+                                        <summary>Hội đồng đầu tư</summary>
+                                    </details>
+                                </li>
+                                <li>
+                                    <details open>
+                                        <summary>Ban tổng giám đốc</summary>
+                                        <ul>
+                                            <li>
+                                                <details>
+                                                    <summary>Khối môi giới</summary>
+                                                    <ul>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Chăm sóc KH chung</summary>
+                                                            </details>
+                                                        </li>
+                                                        <li>
+                                                            <details>
+                                                                <summary>Vùng kinh doanh</summary>
+                                                                <ul>
+                                                                    <li>
+                                                                        <details>
+                                                                            <summary>P. Môi giới KH tổ chức</summary>
+                                                                        </details>
+                                                                    </li>
+                                                                    <li>
+                                                                        <details>
+                                                                            <summary>Khu vực kinh doanh</summary>
+                                                                            <ul>
+                                                                                <li>
+                                                                                    <details>
+                                                                                        <summary>Các phòng môi giới
+                                                                                        </summary>
+                                                                                    </details>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </details>
+                                                                    </li>
+                                                                </ul>
+                                                            </details>
+                                                        </li>
+                                                    </ul>
+                                                </details>
+                                            </li>
+                                            <li>
+                                                <details>
+                                                    <summary>Khối bán lẻ</summary>
+                                                    <ul>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Chăm sóc khách hàng</summary>
+                                                            </details>
+                                                        </li>
+                                                        <li>
+                                                            <details>
+                                                                <summary>Trung tâm kinh doanh</summary>
+                                                                <ul>
+                                                                    <li>
+                                                                        <details>
+                                                                            <summary>P. Kinh doanh SPTC</summary>
+                                                                        </details>
+                                                                    </li>
+                                                                </ul>
+                                                            </details>
+                                                        </li>
+                                                    </ul>
+                                                </details>
+                                            </li>
+                                            <li>
+                                                <details>
+                                                    <summary>Khối dịch vụ ngân hàng đầu tư</summary>
+                                                    <ul>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Tư vấn tài chính doanh nghiệp</summary>
+                                                            </details>
+                                                        </li>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Phát triển Đối tác</summary>
+                                                            </details>
+                                                        </li>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Dịch vụ ngân hàng đầu tư</summary>
+                                                            </details>
+                                                        </li>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Dịch vụ quan hệ nhà đầu tư (IR)</summary>
+                                                            </details>
+                                                        </li>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Thẩm định</summary>
+                                                            </details>
+                                                        </li>
+                                                    </ul>
+                                                </details>
+                                            </li>
+                                            <li>
+                                                <details>
+                                                    <summary>Khối tài chính</summary>
+                                                    <ul>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Nguồn vốn</summary>
+                                                            </details>
+                                                        </li>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Kế toán</summary>
+                                                            </details>
+                                                        </li>
+                                                    </ul>
+                                                </details>
+                                            </li>
+                                            <li>
+                                                <details>
+                                                    <summary>Khối nghiên cứu & đầu tư</summary>
+                                                    <ul>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Đầu tư cổ phiếu niêm yết</summary>
+                                                            </details>
+                                                        </li>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Nghiên cứu</summary>
+                                                            </details>
+                                                        </li>
+                                                    </ul>
+                                                </details>
+                                            </li>
+                                            <li>
+                                                <details>
+                                                    <summary>Khối vận hành</summary>
+                                                    <ul>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Giao dịch chứng khoán</summary>
+                                                            </details>
+                                                        </li>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Lưu ký</summary>
+                                                            </details>
+                                                        </li>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Margin</summary>
+                                                            </details>
+                                                        </li>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Vận hành Trái phiếu</summary>
+                                                            </details>
+                                                        </li>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Phái sinh</summary>
+                                                            </details>
+                                                        </li>
+                                                    </ul>
+                                                </details>
+                                            </li>
+                                            <li>
+                                                <details>
+                                                    <summary>Khối công nghệ thông tin</summary>
+                                                    <ul>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Phát triển công nghệ</summary>
+                                                            </details>
+                                                        </li>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Hạ tầng</summary>
+                                                            </details>
+                                                        </li>
+                                                    </ul>
+                                                </details>
+                                            </li>
+                                            <li>
+                                                <details>
+                                                    <summary>Khối văn phòng</summary>
+                                                    <ul>
+                                                        <li>
+                                                            <details>
+                                                                <summary>Văn phòng ban TGĐ</summary>
+                                                            </details>
+                                                        </li>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Hành chính</summary>
+                                                            </details>
+                                                        </li>
+                                                        <li>
+                                                            <details>
+                                                                <summary>TT Đào tạo</summary>
+                                                            </details>
+                                                        </li>
+                                                        <li>
+                                                            <details>
+                                                                <summary>BP. An ninh nội bộ</summary>
+                                                            </details>
+                                                        </li>
+                                                    </ul>
+                                                </details>
+                                            </li>
+                                            <li>
+                                                <details>
+                                                    <summary>Khối hỗ trợ</summary>
+                                                    <ul>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Nhân sự</summary>
+                                                            </details>
+                                                        </li>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Pháp chế</summary>
+                                                            </details>
+                                                        </li>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Quản trị rủi ro</summary>
+                                                            </details>
+                                                        </li>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Kiểm soát nội bộ</summary>
+                                                            </details>
+                                                        </li>
+                                                    </ul>
+                                                </details>
+                                            </li>
+                                            <li>
+                                                <details>
+                                                    <summary>Trung tâm phát triển DVCK</summary>
+                                                    <ul>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. PR & Marketing</summary>
+                                                            </details>
+                                                        </li>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. Thúc đẩy kinh doanh</summary>
+                                                            </details>
+                                                        </li>
+                                                        <li>
+                                                            <details>
+                                                                <summary>P. PTDV Kênh số & Quản trị trải nghiệm KH
+                                                                </summary>
+                                                            </details>
+                                                        </li>
+                                                    </ul>
+                                                </details>
+                                            </li>
+                                            <li>
+                                                <details>
+                                                    <summary>Các chi nhánh</summary>
+                                                    <ul>
+
+                                                        <li>
+                                                            <details>
+                                                                <summary>CN Bà Triệu</summary>
+                                                            </details>
+                                                        </li>
+                                                        <li>
+                                                            <details>
+                                                                <summary>CN Nguyễn Trãi</summary>
+                                                            </details>
+                                                        </li>
+                                                        <li>
+                                                            <details>
+                                                                <summary>CN Sài Gòn</summary>
+                                                            </details>
+                                                        </li>
+                                                    </ul>
+                                                </details>
+                                            </li>
+                                        </ul>
+                                    </details>
+                                </li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </details>
+        </li>
+    </ul>
+
+</body>
+
+</html>
