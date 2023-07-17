@@ -126,7 +126,11 @@
         }
 
         ul.tree li li li li summary {
-            background-color: rgb(232, 36, 36);
+            background-color: #462780;
+        }
+
+        .tree details[only]>summary::before {
+            background-position: calc(-2 * var(--radius)) 0 !important;
         }
     </style>
 </head>
@@ -143,17 +147,17 @@
                             <summary>Hội đồng quản trị</summary>
                             <ul>
                                 <li>
-                                    <details open>
+                                    <details only>
                                         <summary>Văn phòng HĐQT</summary>
                                     </details>
                                 </li>
                                 <li>
-                                    <details open>
+                                    <details only>
                                         <summary>Ủy ban kiểm toán</summary>
                                     </details>
                                 </li>
                                 <li>
-                                    <details open>
+                                    <details only>
                                         <summary>Hội đồng đầu tư</summary>
                                     </details>
                                 </li>
@@ -166,7 +170,7 @@
                                                     <summary>Khối môi giới</summary>
                                                     <ul>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. Chăm sóc KH chung</summary>
                                                             </details>
                                                         </li>
@@ -175,7 +179,7 @@
                                                                 <summary>Vùng kinh doanh</summary>
                                                                 <ul>
                                                                     <li>
-                                                                        <details>
+                                                                        <details only>
                                                                             <summary>P. Môi giới KH tổ chức</summary>
                                                                         </details>
                                                                     </li>
@@ -184,7 +188,7 @@
                                                                             <summary>Khu vực kinh doanh</summary>
                                                                             <ul>
                                                                                 <li>
-                                                                                    <details>
+                                                                                    <details only>
                                                                                         <summary>Các phòng môi giới
                                                                                         </summary>
                                                                                     </details>
@@ -203,7 +207,7 @@
                                                     <summary>Khối bán lẻ</summary>
                                                     <ul>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. Chăm sóc khách hàng</summary>
                                                             </details>
                                                         </li>
@@ -212,7 +216,7 @@
                                                                 <summary>Trung tâm kinh doanh</summary>
                                                                 <ul>
                                                                     <li>
-                                                                        <details>
+                                                                        <details only>
                                                                             <summary>P. Kinh doanh SPTC</summary>
                                                                         </details>
                                                                     </li>
@@ -227,27 +231,27 @@
                                                     <summary>Khối dịch vụ ngân hàng đầu tư</summary>
                                                     <ul>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. Tư vấn tài chính doanh nghiệp</summary>
                                                             </details>
                                                         </li>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. Phát triển Đối tác</summary>
                                                             </details>
                                                         </li>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. Dịch vụ ngân hàng đầu tư</summary>
                                                             </details>
                                                         </li>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. Dịch vụ quan hệ nhà đầu tư (IR)</summary>
                                                             </details>
                                                         </li>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. Thẩm định</summary>
                                                             </details>
                                                         </li>
@@ -259,12 +263,12 @@
                                                     <summary>Khối tài chính</summary>
                                                     <ul>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. Nguồn vốn</summary>
                                                             </details>
                                                         </li>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. Kế toán</summary>
                                                             </details>
                                                         </li>
@@ -276,12 +280,12 @@
                                                     <summary>Khối nghiên cứu & đầu tư</summary>
                                                     <ul>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. Đầu tư cổ phiếu niêm yết</summary>
                                                             </details>
                                                         </li>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. Nghiên cứu</summary>
                                                             </details>
                                                         </li>
@@ -293,27 +297,27 @@
                                                     <summary>Khối vận hành</summary>
                                                     <ul>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. Giao dịch chứng khoán</summary>
                                                             </details>
                                                         </li>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. Lưu ký</summary>
                                                             </details>
                                                         </li>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. Margin</summary>
                                                             </details>
                                                         </li>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. Vận hành Trái phiếu</summary>
                                                             </details>
                                                         </li>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. Phái sinh</summary>
                                                             </details>
                                                         </li>
@@ -325,12 +329,12 @@
                                                     <summary>Khối công nghệ thông tin</summary>
                                                     <ul>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. Phát triển công nghệ</summary>
                                                             </details>
                                                         </li>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. Hạ tầng</summary>
                                                             </details>
                                                         </li>
@@ -342,22 +346,22 @@
                                                     <summary>Khối văn phòng</summary>
                                                     <ul>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>Văn phòng ban TGĐ</summary>
                                                             </details>
                                                         </li>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. Hành chính</summary>
                                                             </details>
                                                         </li>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>TT Đào tạo</summary>
                                                             </details>
                                                         </li>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>BP. An ninh nội bộ</summary>
                                                             </details>
                                                         </li>
@@ -369,22 +373,22 @@
                                                     <summary>Khối hỗ trợ</summary>
                                                     <ul>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. Nhân sự</summary>
                                                             </details>
                                                         </li>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. Pháp chế</summary>
                                                             </details>
                                                         </li>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. Quản trị rủi ro</summary>
                                                             </details>
                                                         </li>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. Kiểm soát nội bộ</summary>
                                                             </details>
                                                         </li>
@@ -396,17 +400,17 @@
                                                     <summary>Trung tâm phát triển DVCK</summary>
                                                     <ul>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. PR & Marketing</summary>
                                                             </details>
                                                         </li>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. Thúc đẩy kinh doanh</summary>
                                                             </details>
                                                         </li>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>P. PTDV Kênh số & Quản trị trải nghiệm KH
                                                                 </summary>
                                                             </details>
@@ -420,17 +424,17 @@
                                                     <ul>
 
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>CN Bà Triệu</summary>
                                                             </details>
                                                         </li>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>CN Nguyễn Trãi</summary>
                                                             </details>
                                                         </li>
                                                         <li>
-                                                            <details>
+                                                            <details only>
                                                                 <summary>CN Sài Gòn</summary>
                                                             </details>
                                                         </li>
